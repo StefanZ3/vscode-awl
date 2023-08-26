@@ -1,0 +1,25 @@
+{
+  "name": "vscode-awl",
+  "displayName": "vscode-awl",
+  "description": "Language support for Siemens AWL",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "awl",
+      "aliases": ["awl", "awl"],
+      "extensions": [".awl"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "awl",
+      "scopeName": "source.awl",
+      "path": "./syntaxes/awl.tmLanguage.json"
+    }]
+  }
+}
