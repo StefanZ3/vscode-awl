@@ -3,19 +3,91 @@
 	"name": "awl",
 	"patterns": [
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#punctuations"
 		}
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.awl",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.awl",
+					"match": "\\b(?i)(S5TIME|BYTE|BOOL|INT|DINT|WORD|DWORD|REAL|TIME|DATE|DATE_AND_TIME|TIME_OF_DAY|String|ARRAY|ANY|U|O|X|SPB|SPBN|L|SA|T|S|SET|CLR|TAK|FP|UN|ON|XN|NOP|FN|nop|OD|XOD|XOW|UD|UW|SPB|SE|SI|SV|ITD|DTR|of|loop|sld|INC|DEC|UW|OW|UD|OD|L|STW|LAR1|AR2|LAR2|STW|TAR|TAR1|AR1|AR2|TAR2|POP|SLW|SRW|SLD|BTI|ITB|BTD|ITD|DTB|DTR|INVI|INVD|NEGI|NEGD|NEGR|TAW|TAD|TRUNC|SPA|SPL|SPB|SPBN|SPBB|SPBNB|SPBI|SPBIN|SPO|SPS|SPZ|SPN|SPP|SPM|SPPZ|SPMZ|SPU|LOOP|MOD|ABS|SQR|SQRT|EXP|LN|SIN|COS|TAN|ASIN|ACOS|ATAN|BEA|BEB|SRD|SAVE)(?=\\s|\\(|\\;)\\b"
+				},
+				{
+					"name": "keyword.control.awl",
+					"match": "(?:\\s|^)(?i)(<|>|<>|<=|>=|==|\\+|\\-|\\*|/)?(I|D|R)\\b"
+				},
+				{
+					"name": "keyword.control.awl",
+					"match": "\\b(?i)RND(\\+|\\-)?\\b"
+				},
+				{
+					"name": "keyword.other.unit",
+					"match": "\\b(?i)(AUTHOR|VERSION|FAMILY)\\b"
+				},
+				{
+					"name": "support.type.awl",
+					"match": "\\b(?i)(FUNCTION|END_FUNCTION|ORGANIZATION_BLOCK|END_ORGANIZATION_BLOCK|FUNCTION_BLOCK|END_FUNCTION_BLOCK|DATA_BLOCK|END_DATA_BLOCK|BEGIN)\\b"
+				},
+				{
+					"name": "support.function.awl",
+					"match": "#\\w+"
+				},
+				{
+					"name": "storage.type.awl",
+					"match": "\\b(?i)(VAR_INPUT|VAR_OUTPUT|VAR_IN_OUT|VAR_TEMP|STRUCT|VAR|END_VAR|END_VAR|END_STRUCT)\\b"
+				}
+			]
 		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric.awl",
+					"match":"(\\s|\\[|\\(|^)(\\+|\\-)?[0-9]+(\\.[0-9]+)?([Ee][\\+\\-]?[0-9]+)?\\b"
+				},
+				{
+					"name": "constant.numeric.awl",
+					"match":"\\b(?i)(B#16#|W#16#|DW#16#|L#)[0-9A-Z]+\\b"
+				},
+				{
+					"name": "constant.language.awl",
+					"match":"\\b(?i)(CALL|CC|UC|AUF|false|true)\\b"
+				}
+			]
+		},
+		"operators":{
+			"patterns": [
+				{
+					"name": "keyword.control.awl",
+					"match": "\\+|\\-|\\="
+				},
+				{
+					"name": "keyword.control.assignment.awl",
+					"match": ":="
+				},
+				{
+					"name": "variable.language.awl",
+					"match": "\\,|\\;|\\:"
+				}
+
+			]
+		},
+		
 		"strings": {
 			"name": "string.quoted.double.awl",
 			"begin": "\"",
@@ -24,6 +96,25 @@
 				{
 					"name": "constant.character.escape.awl",
 					"match": "\\\\."
+				}
+			]
+		},
+		"comments":{
+			"patterns": [
+				{
+					"captures": {
+						"0": { "name": "punctuation.definition.comment.scl"}
+					},
+					"begin": "\\(\\*",
+					"end": "\\*\\)",
+					"name": "comment.block.scl"
+				},
+				{
+					"captures": {
+						"1": { "name": "punctuation.definition.comment.scl"}
+					},
+					"match": "(//).*$\\n?",
+					"name": "comment.line.double-slash.scl"
 				}
 			]
 		}

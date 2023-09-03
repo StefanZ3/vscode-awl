@@ -1,0 +1,105 @@
+{
+	"name": "AWL",
+	"colors": {
+		"editor.background": "#1F1F1F",
+		"editor.foreground": "#CCCCCC",
+		"activityBarBadge.background": "#007acc",
+		"sideBarTitle.foreground": "#bbbbbb"
+	},
+	"tokenColors": [
+		{
+			"name": "Comment",
+			"scope": [
+				"comment",
+				"punctuation.definition.comment"
+			],
+			"settings": {
+				"foreground": "#009B00"
+			}
+		},
+		{
+			"name": "Keyword, Storage",
+			"scope": [
+				"storage.type"
+			],
+			"settings": {
+				"foreground": "#FFFF00"
+			}
+		},
+		{
+			"name": "Keyword, Other",
+			"scope": [
+				"keyword.other.unit"
+			],
+			"settings": {
+				"foreground": "#808040"
+			}
+		},
+		{
+			"name": "String",
+			"scope": [
+				"string.quoted.double"
+			],
+			"settings": {
+				"foreground": "#008080",
+				
+			}
+		},
+		{
+			"name": "Operator, Misc",
+			"scope": [
+				"keyword.control"
+			],
+			"settings": {
+				"foreground": "#D5D500"
+			}
+		},
+		{
+			"name": "Function, Special Method",
+			"scope": [
+				"support.function"
+			],
+			"settings": {
+				"fontStyle": "italic",
+				"foreground": "#808040"
+			}
+		},
+		{
+			"name": "Number, Constant, Function Argument, Tag Attribute, Embedded",
+			"scope": [
+				"constant.numeric"
+			],
+			"settings": {
+				"foreground": "#0080C0"
+			}
+		},
+		{
+			"name": "Entity Types",
+			"scope": [
+				"support.type"
+			],
+			"settings": {
+				"foreground": "#C10000"
+			}
+		},
+		{
+			"name": "Entity Types",
+			"scope": [
+				"constant.language"
+			],
+			"settings": {
+				"foreground": "#B95C00"
+			}
+		},
+		{
+			"name": "Language methods",
+			"scope": [
+				"variable.language"
+			],
+			"settings": {
+				"fontStyle": "italic",
+				"foreground": "#CE6700"
+			}
+		}	
+	]
+}
