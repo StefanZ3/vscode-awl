@@ -12,7 +12,7 @@
   "contributes": {
     "languages": [{
       "id": "awl",
-      "aliases": ["awl", "awl"],
+      "aliases": ["awl", "AWL"],
       "extensions": [".awl"],
       "configuration": "./language-configuration.json"
     }],
@@ -20,6 +20,13 @@
       "language": "awl",
       "scopeName": "source.awl",
       "path": "./syntaxes/awl.tmLanguage.json"
-    }]
+    }],
+    "themes": [
+      {
+        "label": "AWL",
+        "uiTheme": "vs-dark",
+        "path": "./themes/awl-color-theme.json"
+      }
+    ]
   }
 }
